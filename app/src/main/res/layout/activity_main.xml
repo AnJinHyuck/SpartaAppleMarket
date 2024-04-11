@@ -5,15 +5,69 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintlayout"
+            android:layout_width="match_parent"
+            android:layout_height="60sp">
+
+            <TextView
+                android:id="@+id/tv_where"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_marginBottom="10sp"
+                android:text="내배캠동"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/arrow"
+                android:layout_width="25sp"
+                android:layout_height="25sp"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_where"
+                app:layout_constraintStart_toEndOf="@+id/tv_where"
+                app:layout_constraintTop_toTopOf="@+id/tv_where"
+                app:srcCompat="@drawable/downarrow" />
+
+            <ImageView
+                android:id="@+id/iv_bell"
+                android:layout_width="25sp"
+                android:layout_height="25sp"
+                android:layout_marginRight="10sp"
+                app:layout_constraintBottom_toBottomOf="@+id/arrow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/arrow"
+                app:srcCompat="@drawable/bell" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/main_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:listitem="@layout/recyclerview_item" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
