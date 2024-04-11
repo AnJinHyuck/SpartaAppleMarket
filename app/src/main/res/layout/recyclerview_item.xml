@@ -15,6 +15,7 @@
         android:maxLines="2"
         android:ellipsize="end"
         android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@id/post_image"
         app:layout_constraintTop_toTopOf="@+id/post_image"
         />
@@ -86,6 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="5sp"
         android:text="34"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/iv_commenticon"
         app:layout_constraintStart_toEndOf="@+id/iv_commenticon"
         app:layout_constraintTop_toTopOf="@+id/iv_commenticon" />
@@ -106,6 +108,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="5sp"
         android:text="8"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/iv_emptyheaert"
         app:layout_constraintStart_toEndOf="@+id/iv_emptyheaert"
         app:layout_constraintTop_toTopOf="@+id/iv_emptyheaert" />

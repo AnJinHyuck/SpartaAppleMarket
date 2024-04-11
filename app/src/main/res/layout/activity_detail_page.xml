@@ -1,110 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/detail"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
-    <ImageView
-        android:id="@+id/iv_itemImageInDetailPage"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="fitXY"
-        android:src="@drawable/sample1"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/iv_profile"
-        android:layout_width="55sp"
-        android:layout_height="55sp"
-        android:layout_marginLeft="20sp"
-        android:layout_marginTop="20sp"
-        android:src="@drawable/user"
-        app:layout_constraintStart_toStartOf="@+id/iv_itemImageInDetailPage"
-        app:layout_constraintTop_toBottomOf="@+id/iv_itemImageInDetailPage" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_seller"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10sp"
-        android:text="안양학씨"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/iv_profile"
-        app:layout_constraintTop_toTopOf="@+id/iv_profile" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0sp">
+            <ImageView
+                android:id="@+id/iv_itemImageInDetailPage"
+                android:layout_width="match_parent"
+                android:layout_height="300sp"
+                android:scaleType="fitXY"
+                android:src="@drawable/sample1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_locationInDetailPage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="면몽동"
-        app:layout_constraintStart_toStartOf="@+id/tv_seller"
-        app:layout_constraintTop_toBottomOf="@+id/tv_seller" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_profile"
+                android:layout_width="55sp"
+                android:layout_height="55sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="20sp"
+                android:src="@drawable/user"
+                app:layout_constraintStart_toStartOf="@+id/iv_itemImageInDetailPage"
+                app:layout_constraintTop_toBottomOf="@+id/iv_itemImageInDetailPage" />
 
-    <TextView
-        android:id="@+id/tv_mannerDegree"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="60sp"
-        android:text="39.5°C"
-        android:textColor="#57AF5B"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_seller"
-        app:layout_constraintEnd_toEndOf="parent" />
+            <TextView
+                android:id="@+id/tv_seller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:text="안양학씨"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/iv_profile"
+                app:layout_constraintTop_toTopOf="@+id/iv_profile" />
 
-    <ImageView
-        android:id="@+id/iv_smile"
-        android:layout_width="30sp"
-        android:layout_height="30sp"
-        android:layout_marginLeft="10sp"
-        android:src="@drawable/smile"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_mannerDegree"
-        app:layout_constraintStart_toEndOf="@+id/tv_mannerDegree"
-        app:layout_constraintTop_toTopOf="@+id/tv_mannerDegree" />
+            <TextView
+                android:id="@+id/tv_locationInDetailPage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="면몽동"
+                app:layout_constraintStart_toStartOf="@+id/tv_seller"
+                app:layout_constraintTop_toBottomOf="@+id/tv_seller" />
 
-    <TextView
-        android:id="@+id/tv_mannerDegreeInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5sp"
-        android:text="@string/manner_degree"
-        android:textColor="#8E8E8E"
-        app:layout_constraintEnd_toEndOf="@+id/iv_smile"
-        app:layout_constraintTop_toBottomOf="@+id/iv_smile" />
+            <TextView
+                android:id="@+id/tv_mannerDegree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="60sp"
+                android:text="39.5°C"
+                android:textColor="#57AF5B"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_seller"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-    <View
-        android:id="@+id/line"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="10dp"
-        android:background="#D4D5D4"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
+            <ImageView
+                android:id="@+id/iv_smile"
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:layout_marginLeft="10sp"
+                android:src="@drawable/smile"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_mannerDegree"
+                app:layout_constraintStart_toEndOf="@+id/tv_mannerDegree"
+                app:layout_constraintTop_toTopOf="@+id/tv_mannerDegree" />
 
-    <TextView
-        android:id="@+id/tv_titleInDetailPage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15sp"
-        android:text="샤넬 탑핸들 가방"
-        android:textSize="30sp"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@+id/iv_profile"
-        app:layout_constraintTop_toBottomOf="@+id/line" />
+            <TextView
+                android:id="@+id/tv_mannerDegreeInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5sp"
+                android:text="@string/manner_degree"
+                android:textColor="#8E8E8E"
+                app:layout_constraintEnd_toEndOf="@+id/iv_smile"
+                app:layout_constraintTop_toBottomOf="@+id/iv_smile" />
 
-    <TextView
-        android:id="@+id/lv_itemDetail"
-        android:layout_width="395sp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tv_titleInDetailPage"
-        app:layout_constraintStart_toStartOf="@id/tv_titleInDetailPage"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="3sp"
-        android:scrollbars="vertical"
-        android:text="내용"/>
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="#D4D5D4"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
+
+
+            <TextView
+                android:id="@+id/tv_titleInDetailPage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:text="샤넬 탑핸들 가방"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="@+id/iv_profile"
+                app:layout_constraintTop_toBottomOf="@+id/line" />
+
+            <TextView
+                android:id="@+id/lv_itemDetail"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5sp"
+                android:scrollbars="vertical"
+                android:text="내용"
+                app:layout_goneMarginTop="5sp"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_titleInDetailPage"
+                app:layout_constraintTop_toBottomOf="@+id/tv_titleInDetailPage" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
