@@ -15,11 +15,6 @@ import kotlin.coroutines.coroutineContext
 
 class MyAdapter(val itemList: List<ItemInfo>) :
     RecyclerView.Adapter<MyAdapter.MyAdapterViewHolder>() {
-    interface ItemClick {
-        fun onClick(view: View, position: Int)
-    }
-
-    var itemClick: ItemClick? = null
 
     inner class MyAdapterViewHolder(val itemBinding: RecyclerviewItemBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
@@ -56,11 +51,11 @@ class MyAdapter(val itemList: List<ItemInfo>) :
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
             val intent = Intent(context, DetailPageActivity::class.java)
-            intent.putExtra("photo", item.image)
-            intent.putExtra("title", item.title)
-            intent.putExtra("detailinfo", item.introduce)
-            intent.putExtra("seller", item.seller)
-            intent.putExtra("location", item.location)
+            intent.putExtra("selectedItem", item)
+//            intent.putExtra("title", item.title)
+//            intent.putExtra("detailinfo", item.introduce)
+//            intent.putExtra("seller", item.seller)
+//            intent.putExtra("location", item.location)
             context.startActivity(intent)
         }
     }

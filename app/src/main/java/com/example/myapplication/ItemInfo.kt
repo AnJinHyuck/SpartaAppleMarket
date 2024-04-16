@@ -1,6 +1,9 @@
 package com.example.myapplication
+import android.os.Parcel
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
-
+@Parcelize
 data class ItemInfo(
     val order: String,
     val image: Int,
@@ -11,7 +14,7 @@ data class ItemInfo(
     val comment: String,
     val like: Int,
     val seller:String
-)
+):Parcelable
 
 object Itemlist{
 val list = mutableListOf(

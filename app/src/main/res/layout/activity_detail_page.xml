@@ -6,22 +6,17 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="0sp"
+        app:layout_constraintHeight_percent="0.93"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ScrollView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0sp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="0sp">
             <ImageView
                 android:id="@+id/iv_itemImageInDetailPage"
                 android:layout_width="match_parent"
@@ -66,7 +61,7 @@
                 android:id="@+id/tv_mannerDegree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="60sp"
+                android:layout_marginEnd="60sp"
                 android:text="39.5°C"
                 android:textColor="#57AF5B"
                 android:textSize="18sp"
@@ -78,7 +73,7 @@
                 android:id="@+id/iv_smile"
                 android:layout_width="30sp"
                 android:layout_height="30sp"
-                android:layout_marginLeft="10sp"
+                android:layout_marginStart="10sp"
                 android:src="@drawable/smile"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_mannerDegree"
                 app:layout_constraintStart_toEndOf="@+id/tv_mannerDegree"
@@ -106,30 +101,83 @@
 
             <TextView
                 android:id="@+id/tv_titleInDetailPage"
-                android:layout_width="wrap_content"
+                android:layout_width="370sp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15sp"
+                android:maxLines="2"
                 android:text="샤넬 탑핸들 가방"
                 android:textColor="@color/black"
                 android:textSize="25sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/iv_profile"
                 app:layout_constraintTop_toBottomOf="@+id/line" />
 
             <TextView
                 android:id="@+id/lv_itemDetail"
-                android:layout_width="300sp"
+                android:layout_width="320sp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5sp"
+                android:layout_marginTop="10sp"
                 android:scrollbars="vertical"
                 android:text="내용"
-                app:layout_goneMarginTop="5sp"
                 android:textColor="@color/black"
                 android:textSize="17sp"
                 app:layout_constraintStart_toStartOf="@+id/tv_titleInDetailPage"
-                app:layout_constraintTop_toBottomOf="@+id/tv_titleInDetailPage" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </ScrollView>
-    </LinearLayout>
+                app:layout_constraintTop_toBottomOf="@+id/tv_titleInDetailPage"
+                app:layout_goneMarginTop="5sp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/heartInDetailPage"
+        android:layout_width="20sp"
+        android:layout_height="20sp"
+        android:layout_marginLeft="20sp"
+        android:src="@drawable/emptyheart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+    <View
+        android:id="@+id/underBarLine"
+        android:layout_width="1sp"
+        android:layout_height="25sp"
+        app:layout_constraintStart_toEndOf="@+id/heartInDetailPage"
+        app:layout_constraintTop_toTopOf="@+id/heartInDetailPage"
+        app:layout_constraintBottom_toBottomOf="@+id/heartInDetailPage"
+        android:layout_marginStart="15sp"
+        android:background="#D4D5D4"/>
+
+
+    <TextView
+        android:id="@+id/tv_priceInDetailPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100000"
+        android:layout_marginStart="20sp"
+        android:textSize="23sp"
+        android:layout_marginBottom="3sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/heartInDetailPage"
+        app:layout_constraintStart_toEndOf="@+id/underBarLine"
+        app:layout_constraintTop_toTopOf="@+id/heartInDetailPage" />
+
+    <android.widget.Button
+        android:id="@+id/goChat"
+        android:layout_width="wrap_content"
+        android:layout_height="33sp"
+        android:text="채팅하기"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="#FE5722"
+        app:layout_constraintTop_toTopOf="@+id/tv_priceInDetailPage"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_priceInDetailPage"
+        android:background="@drawable/detailpagebutto"
+        android:layout_marginEnd="20sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="2sp"
+        android:textStyle="bold"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

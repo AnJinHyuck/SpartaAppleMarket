@@ -13,7 +13,7 @@ import com.example.myapplication.databinding.ActivityMainBinding
 private lateinit var binding : ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
-    val adapter = MyAdapter(Itemlist.list)
+    private val adapter = MyAdapter(Itemlist.list)
     val itemList = Itemlist.list
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,9 +26,7 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
         makeList()
-
     }
 
 //    fun goDetailPage(){
