@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -17,30 +18,38 @@ import com.example.myapplication.databinding.ActivityDetailPageBinding
 class DetailPageActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailPageBinding
+
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.detail)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
-        val selectedItem = intent.getParcelableExtra("selectedItem",ItemInfo::class.java)
 
+        val selectedItem = intent.getParcelableExtra("selectedItem", ItemInfo::class.java)
         if (selectedItem != null) {
-            binding.ivItemImageInDetailPage.setImageResource(selectedItem.image)
-            binding.tvTitleInDetailPage.text = selectedItem.title
-            binding.tvSeller.text = selectedItem.seller
-            binding.lvItemDetail.text = selectedItem.introduce
-            binding.tvLocationInDetailPage.text = selectedItem.location
-            binding.tvPriceInDetailPage.text = selectedItem.price
+            binding.apply {
+                ivItemImageInDetailPage.setImageResource(selectedItem.image)
+                tvTitleInDetailPage.text = selectedItem.title
+                tvSeller.text = selectedItem.seller
+                lvItemDetail.text = selectedItem.introduce
+                tvLocationInDetailPage.text = selectedItem.location
+                tvPriceInDetailPage.text = selectedItem.price
+            }
         }
-//        val image = intent.getIntExtra("photo",0)
+        goBack()
+    }
+
+    //        val image = intent.getIntExtra("photo",0)
 //        Glide.with(this)
 //            .load(image)
 //            .into(binding.ivItemImageInDetailPage)
+    fun goBack() {
+        val intent = Intent(this,MainActivity::class.java)
+        binding.ibGoBack.setOnClickListener {
+            startActivity(intent)
+            finish()
+        }
     }
+
 
 }

@@ -45,10 +45,12 @@
                 app:layout_constraintTop_toTopOf="@+id/tv_where"
                 app:srcCompat="@drawable/downarrow" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/iv_bell"
-                android:layout_width="25sp"
-                android:layout_height="25sp"
+                android:layout_width="35sp"
+                android:layout_height="35sp"
+                android:background="@null"
+                android:scaleType="fitCenter"
                 android:layout_marginRight="10sp"
                 app:layout_constraintBottom_toBottomOf="@+id/arrow"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -68,6 +70,20 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:listitem="@layout/recyclerview_item" />
 
+
     </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="48dp"
+        android:clickable="true"
+        android:visibility="gone"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/right"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
