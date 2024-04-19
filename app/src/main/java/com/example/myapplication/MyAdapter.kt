@@ -23,7 +23,6 @@ class MyAdapter(val itemList: List<ItemInfo>) :
     var itemClick: ItemClick? = null
 
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapterViewHolder {
         return MyAdapterViewHolder(
             RecyclerviewItemBinding.inflate(
@@ -36,7 +35,7 @@ class MyAdapter(val itemList: List<ItemInfo>) :
     }
 
     //inner class는 정당한 이유가 아니면 안 쓰는게 낫다 메모리 누수가 벌어짐
- class MyAdapterViewHolder(val itemBinding: RecyclerviewItemBinding) :
+    class MyAdapterViewHolder(val itemBinding: RecyclerviewItemBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
         fun bindItem(items: ItemInfo) {
             itemBinding.apply {
@@ -50,8 +49,6 @@ class MyAdapter(val itemList: List<ItemInfo>) :
         }
 
     }
-
-
 
 
     override fun getItemCount(): Int {
